@@ -155,7 +155,7 @@ if st.button("🚀 Analyze with AI & ML", type="primary"):
                 st.markdown("---")
                 st.subheader("🤖 Google Gemini AI Professional Feedback")
                 with st.spinner("Asking Gemini AI for deep insights..."):
-                    ai_feedback = get_gemini_feedback(api_key_input, resume_text, job_description)
+                    ai_feedback = get_gemini_feedback(api_key, resume_text, job_description)
                     st.markdown(ai_feedback)
 
     else:
