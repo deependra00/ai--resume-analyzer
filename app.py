@@ -93,7 +93,7 @@ with col2:
 
 # Main Execution Button
 if st.button("🚀 Analyze with AI & ML", type="primary"):
-    if api_key_input.strip() == "":
+    if not api_key:  #
         st.error("⚠️ Please enter your Gemini API Key first!")
     elif uploaded_file is not None and job_description.strip() != "":
         with st.spinner("Processing text, computing similarity, and calling Gemini AI..."):
