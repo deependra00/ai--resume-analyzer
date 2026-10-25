@@ -64,11 +64,20 @@ def get_gemini_feedback(api_key, resume_text, job_description):
     except Exception as e:
         return f"Error communicating with Gemini API: {e}"
 
-# API Key Input right on the Main Screen
-st.subheader("🔑 Step 1: Enter Google Gemini API Key")
-api_key_input = st.text_input("Paste your Gemini API Key here", type="password")
+# API Key check from Streamlit Secrets or Environment
+import os
 
-st.markdown("---")
+api_key = None
+try:
+    if "GEMINI_API_KEY" in st.secrets:
+        api_key = st.secrets["GEMINI_API_KEY"]
+except Exception:
+    pass
+    if not api_key:
+    st.subheader("🔑 Step 1: Enter Google Gemini API Key")
+    api_key = st.text_input("Paste your Gemini API Key here", type="password")
+    st.markdown("---")
+else:
 
 # Layout UI - Two Columns for Resume & JD
 col1, col2 = st.columns(2)
