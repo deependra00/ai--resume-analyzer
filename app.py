@@ -73,7 +73,9 @@ try:
         api_key = st.secrets["GEMINI_API_KEY"]
 except Exception:
     pass
-    if not api_key:
+
+#Not secret key
+if not api_key:
     st.subheader("🔑 Step 1: Enter Google Gemini API Key")
     api_key = st.text_input("Paste your Gemini API Key here", type="password")
     st.markdown("---")
