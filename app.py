@@ -77,7 +77,6 @@ except Exception:
     st.subheader("🔑 Step 1: Enter Google Gemini API Key")
     api_key = st.text_input("Paste your Gemini API Key here", type="password")
     st.markdown("---")
-else:
 
 # Layout UI - Two Columns for Resume & JD
 col1, col2 = st.columns(2)
